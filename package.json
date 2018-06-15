@@ -1,0 +1,14 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "Atutorial bot for pokemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ned",
+  "license": "ISC",
+  "dependencies": {
+    "Discord.js": "^11.3.2"
+  }
+}
