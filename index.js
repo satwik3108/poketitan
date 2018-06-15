@@ -6,9 +6,11 @@ let coins = require("./coins.json");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 let xp = require("./xp.json");
+const token = 'process.env.token';
 let purple = botconfig.purple;
 let green = botconfig.green;
 bot.commands = new Discord.Collection()
+
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -38,7 +40,7 @@ bot.on("message",async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let prefix = botconfig.prefix;
+  let prefix = process.env.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
@@ -194,4 +196,4 @@ bot.on("message",async message => {
   }
   });
 
-  bot.login(tokenfile.token);
+  bot.login(token);
